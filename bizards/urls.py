@@ -25,4 +25,6 @@ urlpatterns = [
     path('login', uv.login, name="login"),
     path('signup', uv.signup, name="signup"),
     path('logout', uv.logout, name="logout"),
+    path('create', bv.create, name="create"),
+    path('savenew', bv.savenew, name="savenew"),
 ]

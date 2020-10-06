@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+{% load static %}
+{% block now_show %}
+            <form id="save_new_card" method="POST">
+                {% csrf_token %}
+              
+
+              <div class="row form-group">
+
+                <div class="col-md-6">
+                  <input type="text" placeholder="Enter Url of Visiting Card" name="url" class="form-control">
+                </div>
+
+              </div>
+
+            </form>
+{% endblock now_show %}

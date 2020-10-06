@@ -49,24 +49,14 @@
     <div class="row">
 
         <div class="col-md-3 col-6 mb-4">
-            <button style="border-color: #fd7e14;" class="shadow btn">
-                <b>Save Card</b>
-            </button>
-        </div>
-        <div class="col-md-3 col-6 mb-4 ">
-            <button style="border-color: #fd7e14;" class="shadow btn">
-                <b>Create Card</b>
-            </button>
+            <a href="{% url 'savenew' %}" style="border-color: #fd7e14;" class="shadow btn">
+                <b>Add new</b>
+            </a>
         </div>
         <div class="col-md-3 col-6 mb-4">
-            <button style="border-color: #fd7e14;" class="shadow btn">
-                <b>Share Card</b>
-            </button>
-        </div>
-        <div class="col-md-3 col-6 mb-4">
-            <button style="border-color: #fd7e14;" class="shadow btn">
-                <b>Manage Cards</b>
-            </button>
+            <a href="{% url 'create' %}" style="border-color: #fd7e14;" class="shadow btn">
+                <b>Create</b>
+            </a>
         </div>
 
     </div>
@@ -74,7 +64,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3 border p-4 position-static">
+        <div class="col-md-3 p-4 position-static">
 
             <div class="d-flex feature-v1 cpointer">
                 <span class="wrap-icon icon-layers"></span>
@@ -105,16 +95,29 @@
             </div>
 
         </div>
-        <div class="col-md-9 p-4 border" id="state_detail_view">
-
+        <div class="col-md-9 p-4" id="state_detail_view">
+            {% if selected %}
+                {% block now_show %}
+                
+                {% endblock %}
+                
+            {% else %}
+            
             <div class="mb-4" style="margin: 0 auto;">
             </div>
 
             <img src="{% static 'images/cards_1.svg' %}" alt="Card svg example" class="col-md-10 ">
 
+            {% endif %}
+            
         </div>
     </div>
 </div>
 
 </div>
+
+<script>
+
+</script>
+
 {% endblock content %}
